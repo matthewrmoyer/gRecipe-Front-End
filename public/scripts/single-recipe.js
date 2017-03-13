@@ -6,6 +6,7 @@ $(document).ready(function() {
 		"name": "Peanut Butter and Jelly",
 		"author": "Steve",
 		"rating": 2,
+		"image": "google.com/images",
 		"steps": [
 			{
 			"id": 1,
