@@ -36,13 +36,15 @@ $(document).ready(function() {
 				"id": 9,
 				"recipe_id": 1,
 				"author": "Sarah",
-				"body": "this recipe sux"
+				"body": "this recipe sux",
+				"timestamp": "September 17"
 			},
 			{
 				"id": 12,
 				"recipe_id": 1,
 				"author": "Joe",
-				"body": "this recipe rulz"
+				"body": "this recipe rulz",
+				"timestamp": "July 1"
 			}
 		]
 	}]
