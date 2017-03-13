@@ -1,67 +1,52 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>gBlog Index</title>
+		<title>gRecipe</title>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap/css/bootstrap.css">
 		<script src="https://use.fontawesome.com/57a2949668.js"></script>
-		<link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
+		<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
 		<script src ="./scripts/index.js"></script>
 	</head>
 	<body>
 		<nav class='top-nav'>
 			<ul class = "nav-list">
-				<div class = 'nav-item logo'>gBl<i class="fa fa-globe" aria-hidden="true"></i>g</div>
-				<div class = 'nav-item'><a href="index.html">Read a Blog</a></div>
-				<div class = 'nav-item'><a href="#new-blog-form">Create a Blog</a></div>
+				<div class = 'nav-item logo'>gRecipe</div>
+				<div class = 'nav-item'><a href="google.come">Create a Recipe</a></div>
 				<div class = 'nav-item'><i class="fa fa-user-circle" aria-hidden="true"></i>
-</div>
+				</div>
 				<div class = 'nav-item'><i class="fa fa-cog" aria-hidden="true"></i>
 				</div>
 			</ul>
 		</nav>
-		<div class = "blogs-container">
-			<div class ="blogs col-xs-10">
-				<h1 class = "blogs-heading">Recent Blog Posts</h1>
-			</div>
+
+		<div class = "recipe-heading-container">
+			<h2 class = "recipe-heading">Recipes</h2>
 		</div>
 		
-		<div class ="new-blog-form-container col-xs-12" id ="new-blog-form">
-			<form class = "col-sm-10 new-blog-form" id = "new-blog-form">
-				<h1 class='col-xs-4 new-blog-heading'>Create a Blog</h1>
-				<input type="text" placeholder="Name" class = "name-input col-xs-10" name="name">
-				<input type="text" placeholder="Username or Email" class = "email-input col-xs-10" name="email">
-
-				<input type="password" placeholder="Password" class = "password-input col-xs-10" name="name">
-
-				<input type="text" placeholder="Blog Title" class = "title-input col-xs-10" name="title">
-				
-				<textarea rows="4" cols="50" placeholder="Blog Body Text" class = "body-input col-xs-10" name="body"></textarea>
-				<button type = "submit" class = "blogpost-submit-button col-xs-10">Publish</button>
-			</form>
+		
+		
+		<div class = "footer-ul-container col-xs-12">
+			<ul class= "footer-ul col-xs-3">
+				<li class = "footer-item">Home</li>
+				<li class = "footer-item">Events</li>
+				<li class = "footer-item">Photos</li>
+				<li class = "footer-item">Videos</li>
+			</ul>
+			<ul class= "footer-ul col-xs-3">
+				<li class = "footer-item">About Us</li>
+				<li class = "footer-item">News</li>
+				<li class = "footer-item">Promotions</li>
+				<li class = "footer-item">Feedback</li>
+			</ul>
+			<ul class= "footer-ul col-xs-3">
+				<li class = "footer-item">Contact</li>
+				<li class = "footer-item">1-483-432-9090</li>
+				<li class = "footer-item">gBlogSupport@gblog.com</li>
+				<li class = "footer-item">1062 Delaware St Denver, CO</li>
+			</ul>
 		</div>
-		<footer>
-			<div class = "footer-ul-container col-xs-12">
-				<ul class= "footer-ul col-xs-3">
-					<li class = "footer-item">Home</li>
-					<li class = "footer-item">Events</li>
-					<li class = "footer-item">Photos</li>
-					<li class = "footer-item">Videos</li>
-				</ul>
-				<ul class= "footer-ul col-xs-3">
-					<li class = "footer-item">About Us</li>
-					<li class = "footer-item">News</li>
-					<li class = "footer-item">Promotions</li>
-					<li class = "footer-item">Feedback</li>
-				</ul>
-				<ul class= "footer-ul col-xs-3">
-					<li class = "footer-item">Contact</li>
-					<li class = "footer-item">1-483-432-9090</li>
-					<li class = "footer-item">gBlogSupport@gblog.com</li>
-					<li class = "footer-item">1062 Delaware St Denver, CO</li>
-				</ul>
-			</div>
-		</footer>
-	</body>
+	</footer>
+</body>
 </html>
