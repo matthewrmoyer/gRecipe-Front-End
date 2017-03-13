@@ -1,0 +1,135 @@
+@import url("reset.css");
+/* read this about this box-sizing thingy 
+https://css-tricks.com/box-sizing/*/
+* {
+  box-sizing: border-box; }
+
+body {
+  color: #4d4d4d;
+  background-color: #f1f1ef;
+  line-height: 1.25; }
+
+ul {
+  list-style-type: none; }
+
+.top-nav {
+  background-color: gray;
+  height: 5vw;
+  box-shadow: 0px 7px 10px #676767;
+  margin-bottom: 20px;
+  border-bottom: solid 5px white; }
+
+.nav-list {
+  display: flex;
+  height: 5vw;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(16px + 1vw); }
+  .nav-list .logo {
+    font-size: 4vw; }
+  .nav-list a {
+    color: orange; }
+
+.nav-item {
+  color: orange;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer; }
+
+.blogs-container {
+  display: flex;
+  justify-content: center; }
+
+.single-blog-container {
+  background-color: #f8f8f7;
+  border: 1px solid #cccccc;
+  margin-bottom: 20px;
+  padding-bottom: 50px;
+  box-shadow: 0px 0px 5px 0px gray; }
+
+.blogs {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.blogs-heading {
+  font-size: calc(16px + 1.5vw);
+  margin-bottom: 25px; }
+
+.blog-title {
+  font-size: calc(14px + 1vw);
+  color: #f59e00; }
+
+.blog-author {
+  font-size: calc(12px + 1vw); }
+
+.blog-body {
+  font-size: calc(12px + .5vw);
+  height: 20vw;
+  overflow: hidden; }
+
+.blogpost-button-container {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px; }
+  .blogpost-button-container a {
+    color: #4d4d4d; }
+
+.blogpost-delete-button {
+  font-size: calc(12px + 1vw);
+  background-color: #990000;
+  color: #b3b3b3; }
+  .blogpost-delete-button:focus {
+    outline: 0; }
+  .blogpost-delete-button:active {
+    box-shadow: inset 0 0 5px 0px black; }
+
+.new-blog-form-container {
+  display: flex;
+  justify-content: center; }
+
+.new-blog-heading {
+  font-size: calc(14px + 1vw);
+  margin-top: 20px; }
+
+.new-blog-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .new-blog-form input {
+    font-size: calc(14px + .5vw); }
+    .new-blog-form input:focus {
+      outline-color: orange; }
+
+.body-input {
+  height: 30vw;
+  font-size: calc(14px + .5vw); }
+  .body-input:focus {
+    outline-color: orange; }
+
+.blogpost-submit-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: orange;
+  color: #4d4d4d;
+  height: 5vw;
+  font-size: calc(12px + 1vw); }
+  .blogpost-submit-button:focus {
+    outline-color: orange; }
+
+.footer-ul-container {
+  background-color: gray;
+  color: #cdcdcd;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border-top: solid 7px white; }
+  .footer-ul-container li {
+    cursor: pointer; }
+    .footer-ul-container li:hover {
+      color: white; }
+
+/*# sourceMappingURL=index.css.map */
