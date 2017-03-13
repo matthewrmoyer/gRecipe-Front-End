@@ -26,25 +26,52 @@
 		</div>
 
 
-		<script id="all-recipes-template" type="text/x-handlebars-template">
-		<div class = "all-recipes-container">
+		<script id="single-recipe-template" type="text/x-handlebars-template">
 			<div class="single-recipe-container">
 					<h3 class = "single-recipe-name"><a href="{{id}}">{{name}}</a></h3>
 					<h4 class ="single-recipe-author"> Created by {{author}}</h4>
 					<h5 class = "single-recipe-rating">Rating: {{rating}}</h5>
+					<br>
+					<div class = "col-sm-8 single-recipe-button-container">
+						<button class = "single-recipe-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+						<button class = "single-recipe-delete-button"><i class="fa fa-trash-o"></i></button>
+					</div>
+					<br>
+					<ul class ="ingredients-list">Ingredients:
+						{{#each ingredients}}
+						<li class = "ingredients-item"> - {{name}}</li>
+						{{/each}}
+						
+					</ul>
+					<br>
 					<ul class = "steps-list">
 						{{#each steps}}
 						<li class = "step-item">{{stepNumber}}.   {{body}}</li>
 						{{/each}}
 					</ul>
+					<br>
+					<div class = "all-reviews-container">
+						<div class = "single-review-container">
+							<div class ="single-review">
+								{{#each reviews}}
+								<h4>{{author}}</h4>
+								<p>{{body}}</p>
+								{{/each}}
+							</div>
+						</div>
+					</div>
 			</div>
-		</div>
 		</script>
 
 
 		<div class="recipes-placeholder"></div>
 
-	
+		<form class ="review-form">
+			<input class = "col-xs-10" type="text" name="review-author-input" placeholder="Your Name">
+
+			<textarea class = "col-xs-10" rows="4" cols="50" placeholder="Review..." class = "review-body-input col-xs-10" name="review-body-input"></textarea>
+
+		</form>
 		
 		<div class = "footer-ul-container col-xs-12">
 			<ul class= "footer-ul col-xs-3">

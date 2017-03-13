@@ -29,6 +29,20 @@ $(document).ready(function() {
 			"id": 7,
 			"name": "Eggs"
 			}
+		],
+		"reviews": [
+			{
+				"id": 9,
+				"recipe_id": 1,
+				"author": "Sarah",
+				"body": "this recipe sux"
+			},
+			{
+				"id": 12,
+				"recipe_id": 1,
+				"author": "Joe",
+				"body": "this recipe rulz"
+			}
 		]
 	}]
 
@@ -38,11 +52,7 @@ $(document).ready(function() {
 	})
 
 
-
-
-
-
-	var source = $("#all-recipes-template").html();
+	var source = $("#single-recipe-template").html();
 	// console.log(source)
 	var template = Handlebars.compile(source);
 
