@@ -24,27 +24,18 @@
 		<div class = "recipe-heading-container">
 			<h2 class = "recipe-heading">Recipes</h2>
 		</div>
-
 		<script id="all-recipes-template" type="text/x-handlebars-template">
 		<div class = "all-recipes-container">
-			<div class="single-recipe-container">
-
-			<!-- add {{id}} to end of href to get specific data on single site get request -->
-					<h3><a href="file:///Users/matthewmoyer/Desktop/Galvanize/gRecipe/
-					public/single-recipe.html?id={{id}}">Title: {{title}}</a></h3>
+				<div class="single-recipe-container">
+					<h3><a href="/single-recipe.html?id={{id}}">Title: {{title}}</a></h3>
 					<h4>User Id: {{user_id}}</h4>
-					<div class="body">
-							{{body}}
-					</div>
+					<div class="body">{{body}}</div>
 					<div class ="image"><a href="{{image}}">{{image}}</a></div>
-			</div>
+				</div>
 		</div>
 		</script>
-
-
 		<div class="recipes-placeholder"></div>
-
-	
+		
 		
 		<div class = "footer-ul-container col-xs-12">
 			<ul class= "footer-ul col-xs-3">
