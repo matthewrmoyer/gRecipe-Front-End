@@ -59,7 +59,7 @@
 																<p>{{body}}</p>
 																		<div class = "col-sm-8 single-review-button-container">
 																<button class = "single-review-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-																<button class = "single-review-delete-button"><i class="fa fa-trash-o"></i></button>
+																<button class = "single-review-delete-button-{{id}}"><i class="fa fa-trash-o"></i></button>
 																<br>
 																<br>
 													</div>
@@ -81,7 +81,7 @@
 		<div class="recipes-placeholder"></div>
 		<form class ="review-form">
 			<h4>Create a Review</h4>
-			<input class = "col-xs-10" type="text" name="review-author-input" placeholder="Your Name">
+			<input class = "review-author-input col-xs-10" type="text" name="review-author-input" placeholder="Your Name">
 			<textarea class = "col-xs-10" rows="4" cols="50" placeholder="Review..." class = "review-body-input col-xs-10" name="review-body-input"></textarea>
 			<button type="submit" class="review-submit-button col-xs-10">Publish</button>
 		</form>

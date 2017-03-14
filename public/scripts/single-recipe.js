@@ -74,6 +74,92 @@ $(document).ready(function() {
 	})*/
 
 
+
+	// $(".single-recipe-delete-button").on('click', () => {
+	// 	console.log('cliking delete')
+	// 		//arrow functions fuck up 'this' figure 'this' out so you dont have to put the class in here
+	// 	var id = window.location.href.split("/").pop();
+	// 	console.log(id)
+	// 	$.ajax({
+	// 		url: '/single-recipe',
+	// 		type: 'DELETE',
+	// 		data: {
+	// 			'id': id
+	// 		},
+	// 		success: function(response) {
+	// 			console.log('delete success')
+	// 		}
+	// 	});
+	// 	setTimeout(function() {
+	// 		location.reload();
+	// 	}, 500)
+	// })
+
+		// $(".single-review-delete-button").on('click', () => {
+	// 	console.log('cliking delete')
+	// 		//arrow functions fuck up 'this' figure 'this' out so you dont have to put the class in here
+	// 	var id = //get number from classname
+	// 	console.log(id)
+	// 	$.ajax({
+	// 		url: '/single-recipe-review',
+	// 		type: 'DELETE',
+	// 		data: {
+	// 			'id': id
+	// 		},
+	// 		success: function(response) {
+	// 			console.log('delete success')
+	// 		}
+	// 	});
+	// 	setTimeout(function() {
+	// 		location.reload();
+	// 	}, 500)
+	// })
+
+
+
+	// $('.review-submit-button').on('click', () => {
+	// 	console.log('clikkkkkkkk subbbigsadf')
+
+
+	// 	$.post('/whatever the link should be here', {
+	// 			author: $('.review-author-input').val(),
+	// 			singleRecipeId: window.location.href.split("/").pop(),
+	// 			body: $('.review-author-input').val()
+
+	// 		})
+	// 		.done(console.log('comment post success'))
+	// 		.fail(console.log('comment post failed...'))
+
+
+	// 	setTimeout(function() {
+	// 		location.reload();
+	// 	}, 500)
+	// }) 
+
+
+
+	// 	$('.edit-submit-button').on('click', () => {
+	// 	var blogpostId = window.location.href.split("/").pop();
+	// 	var blogpostBody = $('.blogpost-edit-input').val();
+	// 	console.log(blogpostBody)
+	// 	$.ajax({
+	// 		url: '/blogpost/single-blogpost/edit',
+	// 		type: 'PATCH',
+	// 		data: {
+	// 			'id': blogpostId,
+	// 			'body': blogpostBody
+	// 		},
+	// 		success: function(response) {
+	// 			console.log('patch success')
+	// 		}
+	// 	});
+	// 	setTimeout(function() {
+	// 		location.reload();
+	// 	}, 500)
+
+	// })
+
+
 	var source = $("#single-recipe-template").html();
 	var template = Handlebars.compile(source);
 
