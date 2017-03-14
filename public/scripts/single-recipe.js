@@ -1,77 +1,73 @@
 $(document).ready(function() {
 
-	//dummy data
-	var singleRecipe = [{
-		"id": 1,
-		"name": "Peanut Butter and Jelly",
-		"author": "Steve",
-		"rating": 2,
-		"image": "google.com/images",
-		"steps": [
-			{
-			"id": 1,
-			"body": "call your mom and ask her what to do",
-			"stepNumber": 1,
-			"recipe_id": 1
-			}, 
-			{
-			"id": 9,
-			"body": "just use the microwave",
-			"stepNumber": 2,
-			"recipe_id": 1
-			}, 
-		],
-		// "ingredients": [
-		// 	{
-		// 		"id": 1,
-		// 		"name": "Milk"
-		// 	}, 
-		// 	{
-		// 	"id": 7,
-		// 	"name": "Eggs"
-		// 	}
-		// ],
-		"reviews": [
-			{
-				"id": 9,
-				"recipe_id": 1,
-				"author": "Sarah",
-				"body": "this recipe sux",
-				"timestamp": "September 17"
-			},
-			{
-				"id": 12,
-				"recipe_id": 1,
-				"author": "Joe",
-				"body": "this recipe rulz",
-				"timestamp": "July 1"
+
+
+	function getUrlParameter(sParam) {
+		const sPageURL = decodeURIComponent(window.location.search.substring(1));
+		const sURLVariables = sPageURL.split('&');
+		let id;
+
+		sURLVariables.forEach((paraName) => {
+			const sParameterName = paraName.split('=');
+			if (sParameterName[0] === sParam) {
+				id = sParameterName[1] === undefined ? false : sParameterName[1];
 			}
-		]
-	}]
+		});
+		return id;
+	}
 
-	var ingredients = [
-			{
-				"id": 1,
-				"name": "Milk"
-			}, 
-			{
-			"id": 7,
-			"name": "Eggs"
+
+	var recipes = []
+
+	var steps = []
+
+	var targetRecipeId = getUrlParameter('id');
+
+	var targetRecipe = {};
+
+	var targetSteps = [];
+
+
+	function getSuccessFunction() {
+		for (var i = 0; i < recipes.length; i++) {
+			if (recipes[i]['id'] == targetRecipeId) {
+				targetRecipe = recipes[i]
 			}
-		]
+		}
+		for (var i = 0; i < steps.length; i++) {
+			if (steps[i]['recipe_id'] == targetRecipeId) {
+				targetSteps.push(steps[i])
+			}
+		}
 
-	//sanity test
-	$("body").on('click', function() {
-		console.log('body clicked')
-	})
+		var source = $("#single-recipe-template").html();
+		var template = Handlebars.compile(source);
 
-		/* 
-		$.get('/single-recipe:id', (data) => {
-		data.forEach((element) => {
-			//push to arrays to use with handlbars
-			//do mulitple get requests for different parts if necessary
+		var html = template({
+			"title": targetRecipe['title'],
+			"user_id": targetRecipe["user_id"],
+			"image": targetRecipe["image"],
+			"steps": targetSteps
 		})
-	})*/
+
+		$(".recipes-placeholder").append(html)
+	}
+
+	$.get('https://grecipeback.herokuapp.com/recipeRoute', (data) => {
+		data.forEach((element) => {
+			recipes.push(element)
+		})
+		console.log("RECIPES:")
+		console.log(recipes)
+
+		$.get('https://grecipeback.herokuapp.com/stepRoute', (data) => {
+			data.forEach((element) => {
+				steps.push(element)
+			})
+			console.log("STEPS:")
+			console.log(steps)
+		}).then(getSuccessFunction)
+	})
 
 
 
@@ -95,7 +91,7 @@ $(document).ready(function() {
 	// 	}, 500)
 	// })
 
-		// $(".single-review-delete-button").on('click', () => {
+	// $(".single-review-delete-button").on('click', () => {
 	// 	console.log('cliking delete')
 	// 		//arrow functions fuck up 'this' figure 'this' out so you dont have to put the class in here
 	// 	var id = //get number from classname
@@ -161,38 +157,16 @@ $(document).ready(function() {
 
 
 
-	var source = $("#single-recipe-template").html();
-	var template = Handlebars.compile(source);
-
-	var ingredientsSource = $("#ingredients-template").html();
-	var ingredientsTemplate = Handlebars.compile(ingredientsSource)
-
-	singleRecipe.forEach((element) => {
-		var html = template(element)
-		$('.recipes-placeholder').append(html)
-	})
-
-
-
-		var html = ingredientsTemplate(ingredients)
-		$('.ingredients-placeholder').append(html)
-
-
-
-
-
-
-
-	$(".single-recipe-edit-button").on("click", function(){
+	$(".single-recipe-edit-button").on("click", function() {
 		$(".single-recipe-edit-input").toggleClass('display')
 		$(".single-recipe-edit-submit-button").toggleClass('display')
 
 	})
 
-	$(".single-review-edit-button").on("click", function(){
+	$(".single-review-edit-button").on("click", function() {
 		$(this).siblings('textarea').toggleClass('display')
 		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
-		
+
 
 	})
 

@@ -13,7 +13,7 @@
 	<body>
 		<nav class='top-nav'>
 			<ul class = "nav-list">
-				<div class = 'nav-item logo'>gRecipe</div>
+				<div class = 'nav-item logo'><a href="./index.html">gRecipe</a></div>
 				<div class = 'nav-item'><a href="google.come">Create a Recipe</a></div>
 				<div class = 'nav-item'><i class="fa fa-user-circle" aria-hidden="true"></i>
 				</div>
@@ -26,8 +26,8 @@
 		</div>
 		<script id="single-recipe-template" type="text/x-handlebars-template">
 			<div class="single-recipe-container">
-							<h3 class = "single-recipe-name"><a href="{{id}}">{{name}}</a></h3>
-							<h4 class ="single-recipe-author"> Created by {{author}}</h4>
+							<h3 class = "single-recipe-name"><a href="{{id}}">{{title}}</a></h3>
+							<h4 class ="single-recipe-author"> Created by {{user_id}}</h4>
 							<h5 class = "single-recipe-rating">Rating: {{rating}}</h5>
 							<p>{{image}}</p>
 							<br>
@@ -53,6 +53,36 @@
 										{{/each}}
 							</ul>
 							<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							<div class = "all-reviews-container">
 									<h5>Reviews</h5>
 										<div class = "single-review-container">
