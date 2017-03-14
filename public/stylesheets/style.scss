@@ -85,6 +85,12 @@ ul{
 	flex-direction: column;
 	align-items: flex-start;
 }
+.single-recipe-edit-input{
+	display: none;
+}
+.single-recipe-edit-submit-button{
+	display: none;
+}
 
 
 //footer
@@ -101,4 +107,13 @@ ul{
 			color: lighten(grey, 50)
 		}
 	}
+}
+
+//manipulator classes
+.display{
+	display: block;
+}
+
+.display-none{
+	display:none;
 }

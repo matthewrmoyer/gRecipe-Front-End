@@ -123,7 +123,7 @@ $(document).ready(function() {
 
 	// 	$.post('/whatever the link should be here', {
 	// 			author: $('.review-author-input').val(),
-	// 			singleRecipeId: window.location.href.split("/").pop(),
+	// 			id: window.location.href.split("/").pop(),
 	// 			body: $('.review-author-input').val()
 
 	// 		})
@@ -138,16 +138,16 @@ $(document).ready(function() {
 
 
 
-	// 	$('.edit-submit-button').on('click', () => {
-	// 	var blogpostId = window.location.href.split("/").pop();
-	// 	var blogpostBody = $('.blogpost-edit-input').val();
+	// 	$('.single-recipe-edit-submit-button').on('click', () => {
+	// 	var singleRecipeId = window.location.href.split("/").pop();
+	// 	var singleRecipleEditBody = $('.single-recipe-edit-input').val();
 	// 	console.log(blogpostBody)
 	// 	$.ajax({
-	// 		url: '/blogpost/single-blogpost/edit',
+	// 		url: '/asl;kdfjakls;fjasl;fkjasl;fkjal;kfjdsal;fkjals;dfkjas;lfdk/edit',
 	// 		type: 'PATCH',
 	// 		data: {
-	// 			'id': blogpostId,
-	// 			'body': blogpostBody
+	// 			'id': singleRecipeId,
+	// 			'body': singleRecipeEditBody
 	// 		},
 	// 		success: function(response) {
 	// 			console.log('patch success')
@@ -158,6 +158,7 @@ $(document).ready(function() {
 	// 	}, 500)
 
 	// })
+
 
 
 	var source = $("#single-recipe-template").html();
@@ -176,6 +177,17 @@ $(document).ready(function() {
 		var html = ingredientsTemplate(ingredients)
 		$('.ingredients-placeholder').append(html)
 
+
+
+
+
+
+
+	$(".single-recipe-edit-button").on("click", function(){
+		$(".single-recipe-edit-input").toggleClass('display')
+		$(".single-recipe-edit-submit-button").toggleClass('display')
+
+	})
 
 
 });
