@@ -16,6 +16,14 @@ $(document).ready(function() {
 		}
 	]
 
+
+
+	/* 
+		$.get('/index', (data) => {
+		data.forEach((element) => {
+			//push to all reciples array to use with handlbars
+		})
+	})*/
 	//sanity test
 	$("body").on('click', function(){
 		console.log('body clicked')

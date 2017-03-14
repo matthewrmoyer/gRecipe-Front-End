@@ -65,6 +65,14 @@ $(document).ready(function() {
 		console.log('body clicked')
 	})
 
+		/* 
+		$.get('/single-recipe:id', (data) => {
+		data.forEach((element) => {
+			//push to arrays to use with handlbars
+			//do mulitple get requests for different parts if necessary
+		})
+	})*/
+
 
 	var source = $("#single-recipe-template").html();
 	var template = Handlebars.compile(source);
