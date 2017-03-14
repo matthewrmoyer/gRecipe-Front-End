@@ -60,6 +60,12 @@ ul {
 .single-recipe-edit-submit-button {
   display: none; }
 
+.single-review-edit-input {
+  display: none; }
+
+.single-recipe-review-edit-submit-button {
+  display: none; }
+
 .footer-ul-container {
   background-color: gray;
   color: #cdcdcd;

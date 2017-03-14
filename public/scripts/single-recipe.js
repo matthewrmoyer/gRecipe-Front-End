@@ -189,5 +189,12 @@ $(document).ready(function() {
 
 	})
 
+	$(".single-review-edit-button").on("click", function(){
+		$(this).siblings('textarea').toggleClass('display')
+		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
+		
+
+	})
+
 
 });
