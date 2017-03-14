@@ -26,49 +26,58 @@
 		</div>
 		<script id="single-recipe-template" type="text/x-handlebars-template">
 			<div class="single-recipe-container">
-						<h3 class = "single-recipe-name"><a href="{{id}}">{{name}}</a></h3>
-						<h4 class ="single-recipe-author"> Created by {{author}}</h4>
-						<h5 class = "single-recipe-rating">Rating: {{rating}}</h5>
-						<p>{{image}}</p>
-						<br>
-						<div class = "col-sm-8 single-recipe-button-container">
-								<button class = "single-recipe-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-								<button class = "single-recipe-delete-button"><i class="fa fa-trash-o"></i></button>
-						</div>
-						<br>
-						<ul class ="ingredients-list"><h5>Ingredients</h5>
-								{{#each ingredients}}
-								<li class = "ingredients-item"> - {{name}}</li>
-								{{/each}}
-								
-						</ul>
-						<br>
-						<ul class = "steps-list"> <h5>Steps</h5>
-								{{#each steps}}
-								<li class = "step-item">{{stepNumber}}.   {{body}}</li>
-								{{/each}}
-						</ul>
-						<br>
-						<div class = "all-reviews-container">
-							<h5>Reviews</h5>
-								<div class = "single-review-container">
-										<div class ="single-review">
-												{{#each reviews}}
-												<h6>{{author}}</h6>
-												<p>{{timestamp}}</p>
-												<p>{{body}}</p>
-														<div class = "col-sm-8 single-review-button-container">
-											<button class = "single-review-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-											<button class = "single-review-delete-button"><i class="fa fa-trash-o"></i></button>
-											<br>
-											<br>
-									</div>
-												{{/each}}
+							<h3 class = "single-recipe-name"><a href="{{id}}">{{name}}</a></h3>
+							<h4 class ="single-recipe-author"> Created by {{author}}</h4>
+							<h5 class = "single-recipe-rating">Rating: {{rating}}</h5>
+							<p>{{image}}</p>
+							<br>
+							<div class = "col-sm-8 single-recipe-button-container">
+										<button class = "single-recipe-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+										<button class = "single-recipe-delete-button"><i class="fa fa-trash-o"></i></button>
+							</div>
+							<br>
+<!-- 							<ul class ="ingredients-list"><h5>Ingredients</h5>
+										{{#each ingredients}}
+										<li class = "ingredients-item"> - {{name}}</li>
+										{{/each}}
+										
+							</ul> -->
+							<br>
+							<ul class = "steps-list"> <h5>Steps</h5>
+										{{#each steps}}
+										<li class = "step-item">{{stepNumber}}.   {{body}}</li>
+										{{/each}}
+							</ul>
+							<br>
+							<div class = "all-reviews-container">
+									<h5>Reviews</h5>
+										<div class = "single-review-container">
+													<div class ="single-review">
+																{{#each reviews}}
+																<h6>{{author}}</h6>
+																<p>{{timestamp}}</p>
+																<p>{{body}}</p>
+																		<div class = "col-sm-8 single-review-button-container">
+																<button class = "single-review-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+																<button class = "single-review-delete-button"><i class="fa fa-trash-o"></i></button>
+																<br>
+																<br>
+													</div>
+																{{/each}}
+													</div>
 										</div>
-								</div>
-						</div>
+							</div>
 			</div>
 		</script>
+
+		<script id ="ingredients-template" type="text/x-handlebars-template">
+					<ul class ="ingredients-list"><h5>Ingredients</h5>
+								{{#each this}}
+								<li class = "ingredients-item">{{name}}</li>
+								{{/each}}	
+						</ul>
+		</script>
+		<div class = "ingredients-placeholder"></div>
 		<div class="recipes-placeholder"></div>
 		<form class ="review-form">
 			<h4>Create a Review</h4>

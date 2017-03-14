@@ -21,16 +21,16 @@ $(document).ready(function() {
 			"recipe_id": 1
 			}, 
 		],
-		"ingredients": [
-			{
-				"id": 1,
-				"name": "Milk"
-			}, 
-			{
-			"id": 7,
-			"name": "Eggs"
-			}
-		],
+		// "ingredients": [
+		// 	{
+		// 		"id": 1,
+		// 		"name": "Milk"
+		// 	}, 
+		// 	{
+		// 	"id": 7,
+		// 	"name": "Eggs"
+		// 	}
+		// ],
 		"reviews": [
 			{
 				"id": 9,
@@ -49,6 +49,17 @@ $(document).ready(function() {
 		]
 	}]
 
+	var ingredients = [
+			{
+				"id": 1,
+				"name": "Milk"
+			}, 
+			{
+			"id": 7,
+			"name": "Eggs"
+			}
+		]
+
 	//sanity test
 	$("body").on('click', function() {
 		console.log('body clicked')
@@ -56,13 +67,20 @@ $(document).ready(function() {
 
 
 	var source = $("#single-recipe-template").html();
-	// console.log(source)
 	var template = Handlebars.compile(source);
+
+	var ingredientsSource = $("#ingredients-template").html();
+	var ingredientsTemplate = Handlebars.compile(ingredientsSource)
 
 	singleRecipe.forEach((element) => {
 		var html = template(element)
 		$('.recipes-placeholder').append(html)
 	})
+
+
+
+		var html = ingredientsTemplate(ingredients)
+		$('.ingredients-placeholder').append(html)
 
 
 
