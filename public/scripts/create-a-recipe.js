@@ -20,7 +20,11 @@ $(document).ready(function() {
 			})
 			.done(console.log('post success'))
 			.fail(console.log('post failed'))
-		//location.reload();
+		location.reload();
 	})
 
 });
+
+/* create a recipe
+body = description + steps
+*/

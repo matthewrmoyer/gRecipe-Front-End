@@ -71,7 +71,11 @@ ul {
 
 .recipe-image {
   width: 100vw;
-  height: 30vh; }
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  background-position: center; }
 
 .footer-ul-container {
   background-color: gray;

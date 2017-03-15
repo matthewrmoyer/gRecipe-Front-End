@@ -21,8 +21,8 @@ $(document).ready(function() {
 
 	var steps = []
 
-	// var targetRecipeId = getUrlParameter('id'); uncomment when deploying
-	var targetRecipeId = 1;  //comment this out when deploying
+	var targetRecipeId = getUrlParameter('id'); uncomment when deploying
+	// var targetRecipeId = 63;  //comment this out when deploying
 	console.log(targetRecipeId)
 
 	var targetRecipe = {};
@@ -72,28 +72,22 @@ $(document).ready(function() {
 			console.log(steps)
 		}).then(getSuccessFunction)
 	})
-
-
-
-	// $(".single-recipe-delete-button").on('click', () => {
-	// 	console.log('cliking delete')
-	// 		//arrow functions fuck up 'this' figure 'this' out so you dont have to put the class in here
-	// 	var id = window.location.href.split("/").pop();
-	// 	console.log(id)
-	// 	$.ajax({
-	// 		url: '/single-recipe',
-	// 		type: 'DELETE',
-	// 		data: {
-	// 			'id': id
-	// 		},
-	// 		success: function(response) {
-	// 			console.log('delete success')
-	// 		}
-	// 	});
-	// 	setTimeout(function() {
-	// 		location.reload();
-	// 	}, 500)
-	// })
+	$(document).on('click','.single-recipe-delete-button', () => {
+		console.log('cliking delete')
+		$.ajax({
+			url: 'https://grecipeback.herokuapp.com/recipeRoute',
+			type: 'DELETE',
+			data: {
+				'id': targetRecipeId
+			},
+			success: function(response) {
+				console.log('delete success')
+			}
+		});
+		setTimeout(function() {
+			location.reload();
+		}, 500)
+	})
 
 	// $(".single-review-delete-button").on('click', () => {
 	// 	console.log('cliking delete')
@@ -168,10 +162,6 @@ recipe id
 rating 1-5
 */
 
-
-/* create a recipe
-body = description + steps
-*/
 
 
 

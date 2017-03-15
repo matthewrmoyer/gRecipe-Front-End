@@ -102,10 +102,19 @@ ul{
 .single-recipe-review-edit-submit-button{
 	display: none;
 }
+
+.recipe-image-container{
+	
+}
+
 .recipe-image{
 	//image url set in html
 	width: 100vw;
 	height: 30vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: white;
+	background-position: center;
 }
 
 //footer
