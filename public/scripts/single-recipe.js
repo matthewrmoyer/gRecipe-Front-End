@@ -82,7 +82,7 @@ $(document).ready(function() {
 				'id': targetRecipeId
 			},
 			success: function(response) {
-				console.log('delete success')
+				console.log('delete success for ' + targetRecipeId)
 			}
 		});
 		setTimeout(function() {
