@@ -78,6 +78,12 @@
 		<script id ="reviews-template" type="text/x-handlebars-template">
 						<h6>Review Created By: {{reviewAuthor}}</h6>
 						<p class = "review-item">{{reviewBody}}</p>
+						<div class = "col-sm-8 single-recipe-button-container">
+					<button class = "single-review-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+					<button class = "single-review-delete-button"><i class="fa fa-trash-o"></i></button>
+					<textarea rows="4" cols="50" placeholder="Edit..." class = "single-review-edit-input col-xs-10" name="single-review-edit-input"></textarea>
+					<button type="submit" class="single-review-edit-submit-button col-xs-10">Publish</button>
+			</div>
 					</div>
 		</script>
 

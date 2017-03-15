@@ -134,6 +134,7 @@ $(document).ready(function() {
 	$(document).on("click", ".single-review-edit-button", function() {
 		$(this).siblings('textarea').toggleClass('display')
 		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
+		$(this).siblings('.single-review-edit-submit-button').toggleClass('display')
 	})
 
 
