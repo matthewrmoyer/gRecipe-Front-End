@@ -1,0 +1,85 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.3.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.9.5
+[debug] Time:         Wed Mar 15 2017 14:15:25 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/PiEuGq5pWEvljnpInxgN5o-kSaG0wJtf47J_UBcHB1E',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Mar 15 2017 14:15:25 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/grecipe-front-end  
+ Wed Mar 15 2017 14:15:25 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/grecipe-front-end/tokens  
+ Wed Mar 15 2017 14:15:26 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.3.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.9.5
+[debug] Time:         Wed Mar 15 2017 14:15:51 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/grecipe-front-end  
+ Wed Mar 15 2017 14:15:51 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/grecipe-front-end/tokens  
+ Wed Mar 15 2017 14:15:52 GMT-0600 (MDT)
+[debug] Error: connect ECONNREFUSED 104.197.85.31:443
+    at Object.exports._errnoException (util.js:1022:11)
+    at exports._exceptionWithHostPort (util.js:1045:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1087:14)
+[error] 
+[error] Error: Server Error. connect ECONNREFUSED 104.197.85.31:443
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.3.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.9.5
+[debug] Time:         Wed Mar 15 2017 14:18:02 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/grecipe-front-end  
+ Wed Mar 15 2017 14:18:02 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/grecipe-front-end/tokens  
+ Wed Mar 15 2017 14:18:03 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'grecipe-front-end'...
+[info] 
+[info] i  deploying hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/grecipe-front-end/uploads/-KfIbgqDNBQO9MumWyA8?fileCount=25&message=  
+ Wed Mar 15 2017 14:18:04 GMT-0600 (MDT)
+[debug] Error: connect ETIMEDOUT 23.251.151.130:443
+    at Object.exports._errnoException (util.js:1022:11)
+    at exports._exceptionWithHostPort (util.js:1045:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1087:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 23.251.151.130:443
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.3.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.9.5
+[debug] Time:         Wed Mar 15 2017 14:18:19 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/grecipe-front-end  
+ Wed Mar 15 2017 14:18:19 GMT-0600 (MDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/grecipe-front-end/tokens  
+ Wed Mar 15 2017 14:18:20 GMT-0600 (MDT)

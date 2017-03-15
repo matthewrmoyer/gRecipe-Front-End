@@ -48,28 +48,22 @@ $(document).ready(function() {
 		data.forEach((element) => {
 			recipes.push(element)
 		})
-		console.log("RECIPES:")
-		console.log(recipes)
-
 		$.get('https://grecipeback.herokuapp.com/stepRoute', (data) => {
 			data.forEach((element) => {
 				steps.push(element)
 			})
-			console.log("STEPS:")
-			console.log(steps)
 		}).then(getSuccessFunction)
 	})
 
 	$(document).on('click', '.single-recipe-delete-button', () => {
-		console.log('cliking delete')
 		$.ajax({
 			method: "DELETE",
 			url: `https://grecipeback.herokuapp.com/recipeRoute/${targetRecipeId}`,
 			contentType: "application/json"
-		});
-		setTimeout(function() {
+		}).done(setTimeout(function() {
 			location.reload();
-		}, 500)
+		}, 500))
+	
 	})
 
 	// $(".single-review-delete-button").on('click', () => {

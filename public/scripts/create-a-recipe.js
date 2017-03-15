@@ -1,12 +1,5 @@
 $(document).ready(function() {
 
-
-	//sanity test
-	// $("body").on('click', function(){
-	// 	console.log('body asdadsfafdas')
-	// })
-
-
 	$('.create-a-recipe-submit-button').on("click", (event) => {
 		event.preventDefault()
 
@@ -25,6 +18,4 @@ $(document).ready(function() {
 
 });
 
-/* create a recipe
-body = description + steps
-*/
+

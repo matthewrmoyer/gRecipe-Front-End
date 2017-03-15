@@ -49,6 +49,9 @@ ul {
 .recipes-placeholder {
   flex-grow: 1; }
 
+.ingredient-placeholder {
+  flex-grow: 1; }
+
 .form-container {
   flex-grow: 1; }
 
