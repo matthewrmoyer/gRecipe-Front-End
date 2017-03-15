@@ -1,10 +1,9 @@
 $(document).ready(function() {
-
+	//get id
 	function getUrlParameter(sParam) {
 		const sPageURL = decodeURIComponent(window.location.search.substring(1));
 		const sURLVariables = sPageURL.split('&');
 		let id;
-
 		sURLVariables.forEach((paraName) => {
 			const sParameterName = paraName.split('=');
 			if (sParameterName[0] === sParam) {
@@ -14,22 +13,14 @@ $(document).ready(function() {
 		return id;
 	}
 
-
 	var recipes = []
-
 	var steps = []
-
 	var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
 	// var targetRecipeId = 1; //comment this out when deploying
-	console.log(targetRecipeId)
-
 	var targetRecipe = {};
-
 	var targetSteps = [];
 
-	//USE FOR EACH AND ARROW FOR THESE
-	//USE JS-NATIVE-ARRAY FROM NOTES
-	//FIND BY ID METHOD
+	//USE FOR EACH AND ARROW FOR THESE USE JS-NATIVE-ARRAY FROM NOTES FIND BY ID METHOD
 	function getSuccessFunction() {
 		for (var i = 0; i < recipes.length; i++) {
 			if (recipes[i]['id'] == targetRecipeId) {
@@ -41,10 +32,8 @@ $(document).ready(function() {
 				targetSteps.push(steps[i])
 			}
 		}
-
 		var source = $("#single-recipe-template").html();
 		var template = Handlebars.compile(source);
-
 		var html = template({
 			"title": targetRecipe['title'],
 			"user_id": targetRecipe["user_id"],
@@ -52,7 +41,6 @@ $(document).ready(function() {
 			"body": targetRecipe["body"],
 			"steps": targetSteps
 		})
-
 		$(".recipes-placeholder").append(html)
 	}
 
@@ -104,37 +92,18 @@ $(document).ready(function() {
 	// 	}, 500)
 	// })
 
-
-
 	$(document).on('click', '.review-submit-button', () => {
 		event.preventDefault()
-		console.log('clikkkkkkkk subbbigsadf')
-		console.log($('.review-email-input').val())
-		console.log($('.review-body-input').val())
-
-
-
 		$.post('https://grecipeback.herokuapp.com/reviewRoute', {
 				recipe_id: targetRecipeId,
-				body: $('.review-body-input').val()
+				body: $('.review-body-input').val(),
+				rating: $('.review-rating-input').val()
 			})
 			.done(setTimeout(function() {
 				location.reload();
 			}, 500))
 			.fail(console.log('comment post failed...'))
 	})
-
-
-
-	//recipe recveiuewsadfadsffdsa
-	/*
-	email
-	body
-	recipe id
-	rating 1-5
-	*/
-
-
 
 	//single-recipe-body-edit
 	$(document).on("click", ".single-recipe-edit-button", function() {
@@ -143,7 +112,6 @@ $(document).ready(function() {
 		var recipeBody = $(".single-recipe-body").text()
 		console.log(recipeBody)
 		$(".single-recipe-edit-input").val(recipeBody)
-
 	})
 
 	$(document).on('click', '.single-recipe-edit-submit-button', () => {
@@ -160,17 +128,11 @@ $(document).ready(function() {
 		}).then(setTimeout(function() {
 			location.reload();
 		}, 500))
-
-
 	})
-
-
 
 	$(document).on("click", ".single-review-edit-button", function() {
 		$(this).siblings('textarea').toggleClass('display')
 		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
-
-
 	})
 
 
