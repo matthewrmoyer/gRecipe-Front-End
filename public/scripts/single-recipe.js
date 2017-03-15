@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 	var steps = []
 
-	var targetRecipeId = getUrlParameter('id'); uncomment when deploying
+	var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
 	// var targetRecipeId = 63;  //comment this out when deploying
 	console.log(targetRecipeId)
 
@@ -72,10 +72,11 @@ $(document).ready(function() {
 			console.log(steps)
 		}).then(getSuccessFunction)
 	})
+
 	$(document).on('click','.single-recipe-delete-button', () => {
 		console.log('cliking delete')
 		$.ajax({
-			url: 'https://grecipeback.herokuapp.com/recipeRoute',
+			url: 'https://grecipeback.herokuapp.com/recipeRoute/targetRecipeId',
 			type: 'DELETE',
 			data: {
 				'id': targetRecipeId
