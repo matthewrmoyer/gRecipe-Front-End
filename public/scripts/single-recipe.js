@@ -64,7 +64,8 @@ $(document).ready(function() {
 		var template = Handlebars.compile(source);
 		for (i = 0; i < reviews.length; i++) {
 			var html = template({
-				"reviewBody": reviews[i]
+				"reviewAuthor": reviews[i]['reviewAuthor'],
+				"reviewBody": reviews[i]['reviewBody']
 			})
 			$(".reviews-placeholder").append(html)
 		}
@@ -73,7 +74,7 @@ $(document).ready(function() {
 		data.forEach((element) => {
 			console.log(element)
 			if (element['recipe_id'] == targetRecipeId) {
-				reviews.push(element['body'])
+				reviews.push({ "reviewAuthor": element['user_id'], "reviewBody": element['body']})
 			}
 		})
 		console.log(reviews)

@@ -76,11 +76,8 @@
 
 
 		<script id ="reviews-template" type="text/x-handlebars-template">
-					<div class ="reviews-list"><h5>Reviews</h5>
-					
-							<p class = "review-item">{{reviewBody}}</p>
-						
-				
+						<h6>Review Created By: {{reviewAuthor}}</h6>
+						<p class = "review-item">{{reviewBody}}</p>
 					</div>
 		</script>
 
@@ -90,7 +87,9 @@
 
 		<div class = "recipes-placeholder"></div>
 
-		<div class = "reviews-placeholder"></div>
+		<div class = "reviews-placeholder">
+			<h5>Review</h5>
+		</div>
 
 
 
