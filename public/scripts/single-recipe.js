@@ -15,10 +15,11 @@ $(document).ready(function() {
 
 	var recipes = []
 	var steps = []
-	var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
-	// var targetRecipeId = 1; //comment this out when deploying
+		// var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
+	var targetRecipeId = 1; //comment this out when deploying
 	var targetRecipe = {};
 	var targetSteps = [];
+	var reviews = [];
 
 	//USE FOR EACH AND ARROW FOR THESE USE JS-NATIVE-ARRAY FROM NOTES FIND BY ID METHOD
 	function getSuccessFunction() {
@@ -48,12 +49,37 @@ $(document).ready(function() {
 		data.forEach((element) => {
 			recipes.push(element)
 		})
+
 		$.get('https://grecipeback.herokuapp.com/stepRoute', (data) => {
 			data.forEach((element) => {
 				steps.push(element)
 			})
 		}).then(getSuccessFunction)
 	})
+
+
+
+	function reviewSuccessFunction() {
+		var source = $("#reviews-template").html();
+		var template = Handlebars.compile(source);
+		for (i = 0; i < reviews.length; i++) {
+			var html = template({
+				"reviewBody": reviews[i]
+			})
+			$(".reviews-placeholder").append(html)
+		}
+	}
+	$.get('https://grecipeback.herokuapp.com/reviewRoute', (data) => {
+		data.forEach((element) => {
+			console.log(element)
+			if (element['recipe_id'] == targetRecipeId) {
+				reviews.push(element['body'])
+			}
+		})
+		console.log(reviews)
+	}).then(reviewSuccessFunction)
+
+
 
 	$(document).on('click', '.single-recipe-delete-button', () => {
 		$.ajax({
@@ -63,28 +89,8 @@ $(document).ready(function() {
 		}).done(setTimeout(function() {
 			location.reload();
 		}, 500))
-	
-	})
 
-	// $(".single-review-delete-button").on('click', () => {
-	// 	console.log('cliking delete')
-	// 		//arrow functions fuck up 'this' figure 'this' out so you dont have to put the class in here
-	// 	var id = //get number from classname
-	// 	console.log(id)
-	// 	$.ajax({
-	// 		url: '/single-recipe-review',
-	// 		type: 'DELETE',
-	// 		data: {
-	// 			'id': id
-	// 		},
-	// 		success: function(response) {
-	// 			console.log('delete success')
-	// 		}
-	// 	});
-	// 	setTimeout(function() {
-	// 		location.reload();
-	// 	}, 500)
-	// })
+	})
 
 	$(document).on('click', '.review-submit-button', () => {
 		event.preventDefault()

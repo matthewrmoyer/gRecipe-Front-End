@@ -54,28 +54,12 @@
 				{{/each}}
 			</ul>
 			<br>
-			<div class = "all-reviews-container">
-				<h5>Reviews</h5>
-				<div class = "single-review-container">
-					<div class ="single-review">
-						{{#each reviews}}
-						<h6>{{author}}</h6>
-						<p>{{timestamp}}</p>
-						<p>{{body}}</p>
-						<div class = "col-sm-8 single-review-button-container">
-							<button class = "single-review-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-							<button class = "single-review-delete-button-{{id}}"><i class="fa fa-trash-o"></i></button>
-							<textarea rows="4" cols="50" placeholder="Edit..." class = "single-review-edit-input col-xs-10" name="single-recipe-edit-input"></textarea>
-							<br>
-							<br>
-							<button type="submit" class="single-recipe-review-edit-submit-button col-xs-10">Publish</button>
-						</div>
-						{{/each}}
-					</div>
-				</div>
-			</div>
-		</div>
 		</script>
+
+
+
+
+
 		<script id ="ingredients-template" type="text/x-handlebars-template">
 					<ul class ="ingredients-list"><h5>Ingredients</h5>
 						{{#each this}}
@@ -84,7 +68,32 @@
 					</ul>
 		</script>
 		<div class = "ingredients-placeholder"></div>
-		<div class="recipes-placeholder"></div>
+
+
+
+
+
+
+
+		<script id ="reviews-template" type="text/x-handlebars-template">
+					<div class ="reviews-list"><h5>Reviews</h5>
+					
+							<p class = "review-item">{{reviewBody}}</p>
+						
+				
+					</div>
+		</script>
+
+
+
+
+
+		<div class = "recipes-placeholder"></div>
+
+		<div class = "reviews-placeholder"></div>
+
+
+
 		<form class ="review-form">
 			<h4>Create a Review</h4>
 			<input class = "review-email-input col-xs-10" type="text" name="review-author-input" placeholder="Your Email">
