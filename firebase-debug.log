@@ -15,3 +15,20 @@
     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1087:14)
 [error] 
 [error] Error: Server Error. connect ECONNREFUSED 104.197.85.31:443
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.3.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.9.5
+[debug] Time:         Wed Mar 15 2017 14:23:20 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/grecipe-front-end  
+ Wed Mar 15 2017 14:23:20 GMT-0600 (MDT)
+[debug] Error: connect ECONNREFUSED 104.197.85.31:443
+    at Object.exports._errnoException (util.js:1022:11)
+    at exports._exceptionWithHostPort (util.js:1045:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1087:14)
+[error] 
+[error] Error: Server Error. connect ECONNREFUSED 104.197.85.31:443
