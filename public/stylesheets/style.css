@@ -69,6 +69,10 @@ ul {
 .single-recipe-review-edit-submit-button {
   display: none; }
 
+.recipe-image {
+  width: 100vw;
+  height: 30vh; }
+
 .footer-ul-container {
   background-color: gray;
   color: #cdcdcd;

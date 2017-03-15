@@ -21,13 +21,17 @@ $(document).ready(function() {
 
 	var steps = []
 
-	var targetRecipeId = getUrlParameter('id');
+	// var targetRecipeId = getUrlParameter('id'); uncomment when deploying
+	var targetRecipeId = 1;  //comment this out when deploying
+	console.log(targetRecipeId)
 
 	var targetRecipe = {};
 
 	var targetSteps = [];
 
-
+//USE FOR EACH AND ARROW FOR THESE
+//USE JS-NATIVE-ARRAY FROM NOTES
+//FIND BY ID METHOD
 	function getSuccessFunction() {
 		for (var i = 0; i < recipes.length; i++) {
 			if (recipes[i]['id'] == targetRecipeId) {
@@ -154,6 +158,21 @@ $(document).ready(function() {
 	// 	}, 500)
 
 	// })
+
+
+//recipe recveiuewsadfadsffdsa
+/*
+email
+body
+recipe id
+rating 1-5
+*/
+
+
+/* create a recipe
+body = description + steps
+*/
+
 
 
 
