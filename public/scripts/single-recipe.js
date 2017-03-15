@@ -76,14 +76,9 @@ $(document).ready(function() {
 	$(document).on('click','.single-recipe-delete-button', () => {
 		console.log('cliking delete')
 		$.ajax({
-			url: 'https://grecipeback.herokuapp.com/recipeRoute/targetRecipeId',
-			type: 'DELETE',
-			data: {
-				'id': targetRecipeId
-			},
-			success: function(response) {
-				console.log('delete success for ' + targetRecipeId)
-			}
+			method: "DELETE",
+			url: `https://grecipeback.herokuapp.com/recipeRoute/${targetRecipeId}`,
+			contentType: "applciation/json"
 		});
 		setTimeout(function() {
 			location.reload();
