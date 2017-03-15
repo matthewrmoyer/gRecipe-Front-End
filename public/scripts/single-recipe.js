@@ -116,9 +116,9 @@ $(document).ready(function() {
 			url: `https://grecipeback.herokuapp.com/recipeRoute/${targetRecipeId}`,
 			method: "PUT",
 			contentType: "application/json",
-			data: {
-				'body': JSON.stringify(singleRecipeEditBody)
-			}
+			data: JSON.stringify({
+				body: singleRecipeEditBody
+			})
 		}).then(setTimeout(function() {
 			location.reload();
 		}, 500))
