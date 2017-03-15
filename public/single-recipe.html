@@ -49,6 +49,8 @@
 										
 							</ul> -->
 							<br>
+							<div class = "single-recipe-body"><h3>Body</h3> {{body}}</div>
+
 							<ul class = "steps-list"> <h5>Steps</h5>
 										{{#each steps}}
 										<li class = "step-item">{{stepNumber}}.   {{body}}</li>
@@ -92,8 +94,10 @@
 		<div class="recipes-placeholder"></div>
 		<form class ="review-form">
 			<h4>Create a Review</h4>
-			<input class = "review-author-input col-xs-10" type="text" name="review-author-input" placeholder="Your Name">
-			<textarea class = "col-xs-10" rows="4" cols="50" placeholder="Review..." class = "review-body-input col-xs-10" name="review-body-input"></textarea>
+			<input class = "review-email-input col-xs-10" type="text" name="review-author-input" placeholder="Your Name">
+
+			<textarea class = "review-body-input col-xs-10" rows="4" cols="50" placeholder="Review..." name="review-body-input"></textarea>
+
 			<button type="submit" class="review-submit-button col-xs-10">Publish</button>
 		</form>
 		

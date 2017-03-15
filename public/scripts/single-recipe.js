@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
 	function getUrlParameter(sParam) {
 		const sPageURL = decodeURIComponent(window.location.search.substring(1));
 		const sURLVariables = sPageURL.split('&');
@@ -22,16 +20,16 @@ $(document).ready(function() {
 	var steps = []
 
 	var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
-	// var targetRecipeId = 63;  //comment this out when deploying
+	// var targetRecipeId = 1; //comment this out when deploying
 	console.log(targetRecipeId)
 
 	var targetRecipe = {};
 
 	var targetSteps = [];
 
-//USE FOR EACH AND ARROW FOR THESE
-//USE JS-NATIVE-ARRAY FROM NOTES
-//FIND BY ID METHOD
+	//USE FOR EACH AND ARROW FOR THESE
+	//USE JS-NATIVE-ARRAY FROM NOTES
+	//FIND BY ID METHOD
 	function getSuccessFunction() {
 		for (var i = 0; i < recipes.length; i++) {
 			if (recipes[i]['id'] == targetRecipeId) {
@@ -51,6 +49,7 @@ $(document).ready(function() {
 			"title": targetRecipe['title'],
 			"user_id": targetRecipe["user_id"],
 			"image": targetRecipe["image"],
+			"body": targetRecipe["body"],
 			"steps": targetSteps
 		})
 
@@ -73,12 +72,12 @@ $(document).ready(function() {
 		}).then(getSuccessFunction)
 	})
 
-	$(document).on('click','.single-recipe-delete-button', () => {
+	$(document).on('click', '.single-recipe-delete-button', () => {
 		console.log('cliking delete')
 		$.ajax({
 			method: "DELETE",
 			url: `https://grecipeback.herokuapp.com/recipeRoute/${targetRecipeId}`,
-			contentType: "applciation/json"
+			contentType: "application/json"
 		});
 		setTimeout(function() {
 			location.reload();
@@ -107,73 +106,73 @@ $(document).ready(function() {
 
 
 
-	// $('.review-submit-button').on('click', () => {
-	// 	console.log('clikkkkkkkk subbbigsadf')
-
-
-	// 	$.post('/whatever the link should be here', {
-	// 			author: $('.review-author-input').val(),
-	// 			id: window.location.href.split("/").pop(),
-	// 			body: $('.review-author-input').val()
-
-	// 		})
-	// 		.done(console.log('comment post success'))
-	// 		.fail(console.log('comment post failed...'))
-
-
-	// 	setTimeout(function() {
-	// 		location.reload();
-	// 	}, 500)
-	// }) 
+	$(document).on('click', '.review-submit-button', () => {
+		event.preventDefault()
+		console.log('clikkkkkkkk subbbigsadf')
+		console.log($('.review-email-input').val())
+		console.log($('.review-body-input').val())
 
 
 
-	// 	$('.single-recipe-edit-submit-button').on('click', () => {
-	// 	var singleRecipeId = window.location.href.split("/").pop();
-	// 	var singleRecipleEditBody = $('.single-recipe-edit-input').val();
-	// 	console.log(blogpostBody)
-	// 	$.ajax({
-	// 		url: '/asl;kdfjakls;fjasl;fkjasl;fkjal;kfjdsal;fkjals;dfkjas;lfdk/edit',
-	// 		type: 'PATCH',
-	// 		data: {
-	// 			'id': singleRecipeId,
-	// 			'body': singleRecipeEditBody
-	// 		},
-	// 		success: function(response) {
-	// 			console.log('patch success')
-	// 		}
-	// 	});
-	// 	setTimeout(function() {
-	// 		location.reload();
-	// 	}, 500)
-
-	// })
-
-
-//recipe recveiuewsadfadsffdsa
-/*
-email
-body
-recipe id
-rating 1-5
-*/
+		$.post('https://grecipeback.herokuapp.com/reviewRoute', {
+				recipe_id: targetRecipeId,
+				body: $('.review-body-input').val()
+			})
+			.done(setTimeout(function() {
+				location.reload();
+			}, 500))
+			.fail(console.log('comment post failed...'))
+	})
 
 
 
+	//recipe recveiuewsadfadsffdsa
+	/*
+	email
+	body
+	recipe id
+	rating 1-5
+	*/
 
 
-	$(".single-recipe-edit-button").on("click", function() {
+
+	//single-recipe-body-edit
+	$(document).on("click", ".single-recipe-edit-button", function() {
 		$(".single-recipe-edit-input").toggleClass('display')
 		$(".single-recipe-edit-submit-button").toggleClass('display')
+		var recipeBody = $(".single-recipe-body").text()
+		console.log(recipeBody)
+		$(".single-recipe-edit-input").val(recipeBody)
 
 	})
 
-	$(".single-review-edit-button").on("click", function() {
+	$(document).on('click', '.single-recipe-edit-submit-button', () => {
+		var singleRecipeEditBody = $('.single-recipe-edit-input').val();
+		console.log(singleRecipeEditBody)
+		console.log('tri' + targetRecipeId)
+		$.ajax({
+			url: `https://grecipeback.herokuapp.com/recipeRoute/${targetRecipeId}`,
+			method: "PUT",
+			contentType: "application/json",
+			data: {
+				'body': JSON.stringify(singleRecipeEditBody)
+			}
+		}).then(setTimeout(function() {
+			location.reload();
+		}, 500))
+
+
+	})
+
+
+
+	$(document).on("click", ".single-review-edit-button", function() {
 		$(this).siblings('textarea').toggleClass('display')
 		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
 
 
 	})
+
 
 
 });
