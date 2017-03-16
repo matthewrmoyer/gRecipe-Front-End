@@ -212,14 +212,6 @@ $(document).ready(function() {
 		}, 500))
 	})
 
-	//single step edit
-	$(document).on("click", ".single-step-edit-button", function() {
-		$(this).siblings('textarea').toggleClass('display')
-		$(this).siblings('.single-step-rating-edit-input').toggleClass('display')
-		$(this).siblings('.single-step-review-edit-submit-button').toggleClass('display')
-		$(this).siblings('.single-step-edit-submit-button').toggleClass('display')
-	})
-
 	$(document).on("click", ".single-review-delete-button", function() {
 		console.log('cliking on review delete')
 		console.log(this)
@@ -233,6 +225,37 @@ $(document).ready(function() {
 			location.reload();
 		}, 500))
 	})
+
+
+	//single step edit
+	$(document).on("click", ".single-step-edit-button", function() {
+		$(this).siblings('textarea').toggleClass('display')
+		$(this).siblings('.single-step-edit-submit-button').toggleClass('display')
+	})
+
+	$(document).on('click', '.single-step-edit-submit-button', function() {
+
+		var editedStep = $(this).siblings('textarea').val();
+		console.log(editedStep)
+		var targetStepId = this.dataset.stepId
+		console.log(targetStepId)
+
+		$.ajax({
+			url: `https://grecipeback.herokuapp.com/stepRoute/${targetStepId}`,
+			method: "PUT",
+			contentType: "application/json",
+			data: JSON.stringify({
+				body: editedStep
+			})
+		}).then(setTimeout(function() {
+			location.reload();
+		}, 500))
+
+
+
+
+	})
+
 
 
 

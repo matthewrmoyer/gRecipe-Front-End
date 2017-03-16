@@ -55,10 +55,10 @@
 				<li class = "step-item">{{stepNumber}}.   {{body}}</li>
 
 				<div class = "col-sm-8 single-step-button-container">
-				<button class = "single-step-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-				<button class = "single-step-delete-button"><i class="fa fa-trash-o"></i></button>
-				<textarea rows="4" cols="50" placeholder="Edit..." class = "single-step-edit-input col-xs-10" name="single-step-edit-input"></textarea>
-				<button type="submit" class="single-step-edit-submit-button col-xs-10">Publish</button>
+					<button class = "single-step-edit-button" data-step-id={{id}}><i class="fa fa-pencil" aria-hidden="true"></i></button>
+					<button class = "single-step-delete-button" data-step-id={{id}}><i class="fa fa-trash-o"></i></button>
+					<textarea rows="4" cols="50" placeholder="Edit..." class = "single-step-edit-input col-xs-10" name="single-step-edit-input"></textarea>
+					<button type="submit" class="single-step-edit-submit-button col-xs-10" data-step-id={{id}}>Publish</button>
 			</div>
 				{{/each}}
 
