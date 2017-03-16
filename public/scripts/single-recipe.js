@@ -21,6 +21,7 @@ $(document).ready(function() {
 	var ingredients = [];
 	var targetSteps = [];
 	var reviews = [];
+	var avgReview = 0;
 
 	//USE FOR EACH AND ARROW FOR THESE USE JS-NATIVE-ARRAY FROM NOTES FIND BY ID METHOD
 	function getSuccessFunction() {
@@ -95,8 +96,9 @@ $(document).ready(function() {
 
 		})
 
-		var avg = (total/count)
-		console.log(avg)
+		avgReview = (total/count)
+		console.log(avgReview)
+		$('.average-rating').append(avgReview)
 
 	}
 	$.get('https://grecipeback.herokuapp.com/reviewRoute', (data) => {
