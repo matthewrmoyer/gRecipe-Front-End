@@ -238,6 +238,7 @@ $(document).ready(function() {
 	//single step edit
 	$(document).on("click", ".single-step-edit-button", function() {
 		$(this).siblings('textarea').toggleClass('display')
+		$(this).siblings('textarea').attr('placeholder', "Edit")
 		$(this).siblings('.single-step-edit-submit-button').toggleClass('display')
 	})
 
@@ -274,6 +275,41 @@ $(document).ready(function() {
 		}, 500))
 
 	})
+
+	//single-step add
+
+	$(document).on("click", ".single-step-add-button", function() {
+		$(this).siblings('textarea').toggleClass('display')
+		$(this).siblings('.single-step-add-submit-button').toggleClass('display')
+		$(this).siblings('textarea').attr('placeholder', "New Step Here")
+		$(this).siblings('.single-step-stepnumber-input').toggleClass('display')
+
+
+
+	})
+	
+
+	$(document).on('click', '.single-step-add-submit-button', function() {
+		event.preventDefault()
+
+		console.log($(this).siblings('textarea').val())
+		console.log(targetRecipeId)
+
+
+		$.post('https://grecipeback.herokuapp.com/stepRoute', {
+				
+				body: $(this).siblings('textarea').val(),
+				stepNumber : $(this).siblings('.single-step-stepnumber-input').val(),
+				recipe_id: targetRecipeId
+
+			})
+			.done(setTimeout(function() {
+				location.reload();
+				console.log('in post done function')
+			}, 500))
+			.fail(console.log('comment post failed...'))
+	})
+
 
 
 
