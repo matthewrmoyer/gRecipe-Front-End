@@ -35,6 +35,14 @@ $(document).ready(function() {
 				targetSteps.push(steps[i])
 			}
 		}
+		console.log('TARGET STEPS ASLDFJLSAFDJKA;DLFJASKF')
+		console.log(targetSteps)
+
+		targetSteps = targetSteps.sort(function(a,b){
+			var a1= a.stepNumber, b1= b.stepNumber;
+    			return a1>b1? 1: -1;
+		})
+
 		var source = $("#single-recipe-template").html();
 		var template = Handlebars.compile(source);
 		var html = template({
