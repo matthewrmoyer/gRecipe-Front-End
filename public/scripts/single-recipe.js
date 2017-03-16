@@ -259,8 +259,19 @@ $(document).ready(function() {
 			location.reload();
 		}, 500))
 
+	})
 
+	//single-step delete
+		$(document).on('click', '.single-step-delete-button', function() {
+		var targetStepId = this.dataset.stepId
 
+		$.ajax({
+			method: "DELETE",
+			url: `https://grecipeback.herokuapp.com/stepRoute/${targetStepId}`,
+			contentType: "application/json"
+		}).done(setTimeout(function() {
+			location.reload();
+		}, 500))
 
 	})
 
