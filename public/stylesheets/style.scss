@@ -70,6 +70,9 @@ ul{
 	font-size: calc(16px + 1vw);
 }
 
+.step-item{
+	margin-top: 100px;
+}
 
 .all-recipes-container{
 
@@ -96,6 +99,12 @@ ul{
 	display: none;
 }
 .single-recipe-edit-submit-button{
+	display: none;
+}
+.single-step-edit-input{
+	display: none;
+}
+.single-step-edit-submit-button{
 	display: none;
 }
 .single-review-container{

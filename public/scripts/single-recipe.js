@@ -15,8 +15,8 @@ $(document).ready(function() {
 
 	var recipes = []
 	var steps = []
-		var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
-	// var targetRecipeId = 1; //comment this out when deploying
+		// var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
+	var targetRecipeId = 1; //comment this out when deploying
 	var targetRecipe = {};
 	var ingredients = [];
 	var targetSteps = [];
@@ -212,6 +212,13 @@ $(document).ready(function() {
 		}, 500))
 	})
 
+	//single step edit
+	$(document).on("click", ".single-step-edit-button", function() {
+		$(this).siblings('textarea').toggleClass('display')
+		$(this).siblings('.single-step-rating-edit-input').toggleClass('display')
+		$(this).siblings('.single-step-review-edit-submit-button').toggleClass('display')
+		$(this).siblings('.single-step-edit-submit-button').toggleClass('display')
+	})
 
 	$(document).on("click", ".single-review-delete-button", function() {
 		console.log('cliking on review delete')

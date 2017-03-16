@@ -37,7 +37,7 @@
 			<ul class = "ingredients-list"> 
 				<h5>Ingredients!</h5>
 				{{#each ingredients}}
-					<li class = "step-item">{{name}}: {{quantity}} {{unit}}</li>
+					<li class = "ingredient-item">{{name}}: {{quantity}} {{unit}}</li>
 				{{/each}}
 			</ul>
 			<div class = "col-sm-8 single-recipe-button-container">
@@ -53,7 +53,15 @@
 			<ul class = "steps-list"> <h5>Steps</h5>
 				{{#each steps}}
 				<li class = "step-item">{{stepNumber}}.   {{body}}</li>
+
+				<div class = "col-sm-8 single-step-button-container">
+				<button class = "single-step-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+				<button class = "single-step-delete-button"><i class="fa fa-trash-o"></i></button>
+				<textarea rows="4" cols="50" placeholder="Edit..." class = "single-step-edit-input col-xs-10" name="single-step-edit-input"></textarea>
+				<button type="submit" class="single-step-edit-submit-button col-xs-10">Publish</button>
+			</div>
 				{{/each}}
+
 			</ul>
 
 			<br>

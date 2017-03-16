@@ -46,6 +46,9 @@ ul {
 .recipe-heading {
   font-size: calc(16px + 1vw); }
 
+.step-item {
+  margin-top: 100px; }
+
 .recipes-placeholder {
   flex-grow: 1; }
 
@@ -61,6 +64,12 @@ ul {
   display: none; }
 
 .single-recipe-edit-submit-button {
+  display: none; }
+
+.single-step-edit-input {
+  display: none; }
+
+.single-step-edit-submit-button {
   display: none; }
 
 .single-review-container {
