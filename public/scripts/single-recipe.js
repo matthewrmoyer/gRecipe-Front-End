@@ -105,7 +105,7 @@ $(document).ready(function() {
 			console.log(element)
 			if (element['recipe_id'] == targetRecipeId) {
 				reviews.push({
-					"reviewAuthor": element['user_id'],
+					"reviewAuthor": element['name'],
 					"reviewBody": element['body'],
 					"reviewId": element['id'],
 					"rating": element['rating']
