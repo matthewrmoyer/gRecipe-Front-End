@@ -42,7 +42,6 @@ $(document).ready(function() {
 			"user_id": targetRecipe["user_id"],
 			"image": targetRecipe["image"],
 			"body": targetRecipe["body"],
-			"ingredient": ingredients,
 			"ingredients": ingredients,
 			"steps": targetSteps
 		})
@@ -59,7 +58,7 @@ $(document).ready(function() {
 		$.get('https://grecipeback.herokuapp.com/recipe_ingredientRoute', (data) => {
 			data.forEach((element) => {
 				if(element['recipe_id']==targetRecipeId)
-				ingredients.push({"name": element['ingredient_id'], "quantity": element["quantity"], "unit": element["unit"]})
+				ingredients.push({"name": element['name'], "quantity": element["quantity"], "unit": element["unit"]})
 			})
 		})
 
