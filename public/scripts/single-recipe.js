@@ -100,13 +100,21 @@ $(document).ready(function() {
 
 	$(document).on('click', '.review-submit-button', () => {
 		event.preventDefault()
+		console.log(targetRecipeId)
+		console.log($(".review-body-input").val())
+		console.log($(".review-rating-input").val())
+		console.log($(".review-email-input").val())
+
+
 		$.post('https://grecipeback.herokuapp.com/reviewRoute', {
 				recipe_id: targetRecipeId,
+				email: $(".review-email-input").val(),
 				body: $('.review-body-input').val(),
 				rating: $('.review-rating-input').val()
 			})
 			.done(setTimeout(function() {
 				location.reload();
+				console.log('in post done function')
 			}, 500))
 			.fail(console.log('comment post failed...'))
 	})
