@@ -158,14 +158,20 @@ $(document).ready(function() {
 
 	$(document).on("click", ".single-review-edit-submit-button", function() {
 		console.log('239084uiosdjf')
+		console.log('SIBLING TEXT AREA')
+		console.log($(this).siblings('textarea'))
+
 		var newRating = $(this).siblings('.single-review-rating-edit-input').val();
 		var newReview = $(this).siblings('textarea').val();
 
 		console.log(newRating)
 		console.log(newReview)
 
+		var targetReviewId = this.dataset.reviewId
+
+
 		$.ajax({
-			url: `https://grecipeback.herokuapp.com/reviewRoute/${targetRecipeId}`,
+			url: `https://grecipeback.herokuapp.com/reviewRoute/${targetReviewId}`,
 			method: "PUT",
 			contentType: "application/json",
 			data: JSON.stringify({
