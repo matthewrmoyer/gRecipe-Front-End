@@ -15,8 +15,8 @@ $(document).ready(function() {
 
 	var recipes = []
 	var steps = []
-		// var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
-	var targetRecipeId = 1; //comment this out when deploying
+		var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
+	// var targetRecipeId = 1; //comment this out when deploying
 	var targetRecipe = {};
 	var ingredients = [];
 	var targetSteps = [];
