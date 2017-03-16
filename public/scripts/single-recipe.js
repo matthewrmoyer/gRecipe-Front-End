@@ -58,7 +58,6 @@ $(document).ready(function() {
 	})
 
 
-
 	function reviewSuccessFunction() {
 		var source = $("#reviews-template").html();
 		var template = Handlebars.compile(source);
@@ -66,7 +65,8 @@ $(document).ready(function() {
 			var html = template({
 				"reviewAuthor": reviews[i]['reviewAuthor'],
 				"reviewBody": reviews[i]['reviewBody'],
-				"reviewId": reviews[i]['reviewId']
+				"reviewId": reviews[i]['reviewId'],
+				"rating": reviews[i]['rating']
 			})
 			$(".reviews-placeholder").append(html)
 		}
@@ -78,7 +78,8 @@ $(document).ready(function() {
 				reviews.push({
 					"reviewAuthor": element['user_id'],
 					"reviewBody": element['body'],
-					"reviewId": element['id']
+					"reviewId": element['id'],
+					"rating": element['rating']
 				})
 			}
 		})
