@@ -33,6 +33,12 @@
 						<div class = "recipe-image" style="background-image: url({{image}})"</div>
 											<br>
 			</div>
+			<ul class = "ingredients-list"> 
+				<h5>Ingredients!</h5>
+				{{#each ingredients}}
+					<li class = "step-item">{{name}}: {{quantity}} {{unit}}</li>
+				{{/each}}
+			</ul>
 			<div class = "col-sm-8 single-recipe-button-container">
 				<button class = "single-recipe-edit-button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 				<button class = "single-recipe-delete-button"><i class="fa fa-trash-o"></i></button>
@@ -40,12 +46,7 @@
 				<button type="submit" class="single-recipe-edit-submit-button col-xs-10">Publish</button>
 			</div>
 			<br>
-			<!--<ul class ="ingredients-list"><h5>Ingredients</h5>
-				{{#each ingredients}}
-				<li class = "ingredients-item"> - {{name}}</li>
-				{{/each}}
-				
-			</ul>-->
+	
 			<br>
 			<div class = "single-recipe-body"><h3>Body</h3> {{body}}</div>
 			<ul class = "steps-list"> <h5>Steps</h5>
@@ -53,6 +54,7 @@
 				<li class = "step-item">{{stepNumber}}.   {{body}}</li>
 				{{/each}}
 			</ul>
+
 			<br>
 		</script>
 

@@ -18,6 +18,7 @@ $(document).ready(function() {
 		// var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
 	var targetRecipeId = 1; //comment this out when deploying
 	var targetRecipe = {};
+	var ingredients = [];
 	var targetSteps = [];
 	var reviews = [];
 
@@ -40,8 +41,12 @@ $(document).ready(function() {
 			"user_id": targetRecipe["user_id"],
 			"image": targetRecipe["image"],
 			"body": targetRecipe["body"],
+			"ingredient": ingredients,
+			"ingredients": ingredients,
 			"steps": targetSteps
 		})
+		console.log(ingredients)
+		console.log(targetSteps)
 		$(".recipes-placeholder").append(html)
 	}
 
@@ -50,12 +55,21 @@ $(document).ready(function() {
 			recipes.push(element)
 		})
 
+		$.get('https://grecipeback.herokuapp.com/recipe_ingredientRoute', (data) => {
+			data.forEach((element) => {
+				if(element['recipe_id']==targetRecipeId)
+				ingredients.push({"name": element['ingredient_id'], "quantity": element["quantity"], "unit": element["unit"]})
+			})
+		})
+
 		$.get('https://grecipeback.herokuapp.com/stepRoute', (data) => {
 			data.forEach((element) => {
 				steps.push(element)
 			})
 		}).then(getSuccessFunction)
 	})
+
+	
 
 
 	function reviewSuccessFunction() {
