@@ -66,7 +66,7 @@ $(document).ready(function() {
 			var html = template({
 				"reviewAuthor": reviews[i]['reviewAuthor'],
 				"reviewBody": reviews[i]['reviewBody'],
-				"reviewId":reviews[i]['reviewId']
+				"reviewId": reviews[i]['reviewId']
 			})
 			$(".reviews-placeholder").append(html)
 		}
@@ -128,6 +128,8 @@ $(document).ready(function() {
 		$(".single-recipe-edit-input").val(recipeBody)
 	})
 
+
+
 	$(document).on('click', '.single-recipe-edit-submit-button', () => {
 		var singleRecipeEditBody = $('.single-recipe-edit-input').val();
 		console.log(singleRecipeEditBody)
@@ -144,10 +146,34 @@ $(document).ready(function() {
 		}, 500))
 	})
 
+	//single-review-edit
 	$(document).on("click", ".single-review-edit-button", function() {
 		$(this).siblings('textarea').toggleClass('display')
+		$(this).siblings('.single-review-rating-edit-input').toggleClass('display')
 		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
 		$(this).siblings('.single-review-edit-submit-button').toggleClass('display')
+	})
+
+
+	$(document).on("click", ".single-review-edit-submit-button", function() {
+		console.log('239084uiosdjf')
+		var newRating = $(this).siblings('.single-review-rating-edit-input').val();
+		var newReview = $(this).siblings('textarea').val();
+
+		console.log(newRating)
+		console.log(newReview)
+
+		$.ajax({
+			url: `https://grecipeback.herokuapp.com/reviewRoute/${targetRecipeId}`,
+			method: "PUT",
+			contentType: "application/json",
+			data: JSON.stringify({
+				rating: newRating,
+				body: newReview
+			})
+		}).then(setTimeout(function() {
+			location.reload();
+		}, 500))
 	})
 
 
