@@ -15,8 +15,8 @@ $(document).ready(function() {
 
 	var recipes = []
 	var steps = []
-		var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
-	// var targetRecipeId = 1; //comment this out when deploying
+		// var targetRecipeId = getUrlParameter('id'); //uncomment when deploying
+	var targetRecipeId = 1; //comment this out when deploying
 	var targetRecipe = {};
 	var ingredients = [];
 	var targetSteps = [];
@@ -84,6 +84,20 @@ $(document).ready(function() {
 			})
 			$(".reviews-placeholder").append(html)
 		}
+		var total = 0;
+		var count = 0;
+		reviews.forEach((element) => {
+			
+			if(element['rating']){
+			total += element['rating']
+			count++;
+		}
+
+		})
+
+		var avg = (total/count)
+		console.log(avg)
+
 	}
 	$.get('https://grecipeback.herokuapp.com/reviewRoute', (data) => {
 		data.forEach((element) => {
