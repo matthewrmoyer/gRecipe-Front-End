@@ -65,7 +65,8 @@ $(document).ready(function() {
 		for (i = 0; i < reviews.length; i++) {
 			var html = template({
 				"reviewAuthor": reviews[i]['reviewAuthor'],
-				"reviewBody": reviews[i]['reviewBody']
+				"reviewBody": reviews[i]['reviewBody'],
+				"reviewId":reviews[i]['reviewId']
 			})
 			$(".reviews-placeholder").append(html)
 		}
@@ -74,7 +75,11 @@ $(document).ready(function() {
 		data.forEach((element) => {
 			console.log(element)
 			if (element['recipe_id'] == targetRecipeId) {
-				reviews.push({ "reviewAuthor": element['user_id'], "reviewBody": element['body']})
+				reviews.push({
+					"reviewAuthor": element['user_id'],
+					"reviewBody": element['body'],
+					"reviewId": element['id']
+				})
 			}
 		})
 		console.log(reviews)
@@ -135,6 +140,21 @@ $(document).ready(function() {
 		$(this).siblings('textarea').toggleClass('display')
 		$(this).siblings('.single-recipe-review-edit-submit-button').toggleClass('display')
 		$(this).siblings('.single-review-edit-submit-button').toggleClass('display')
+	})
+
+
+	$(document).on("click", ".single-review-delete-button", function() {
+		console.log('cliking on review delete')
+		console.log(this)
+		var targetReviewId = this.dataset.reviewId
+		console.log(targetReviewId)
+		$.ajax({
+			method: "DELETE",
+			url: `https://grecipeback.herokuapp.com/reviewRoute/${targetReviewId}`,
+			contentType: "application/json"
+		}).done(setTimeout(function() {
+			location.reload();
+		}, 500))
 	})
 
 
